@@ -1,0 +1,31 @@
+.todoItem {
+  display: flex;
+  justify-content: space-between; /* 왼쪽 영역과 삭제 버튼을 양쪽 끝으로 */
+  align-items: center;
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  font-size: 1.4rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.deleteButton {
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  transform: scale(1.3);
+}

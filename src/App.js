@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import { useContext } from 'react';
+import UserName from './components/UserName/UserName'; 
+import ConfirmUserName from './components/UserName/ConfirmUserName';
+import TodoList from './components/TodoList/TodoList';
+import { TodoProvider } from './context/TodoListContext';
+import { userDataContext } from './context/UserNameContext';
 
-function App() {
+export default function App() {
+  const { state } = useContext(userDataContext);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {state.step === 0 && <UserName></UserName>}
+      {state.step === 1 && <ConfirmUserName name={state.tempName}></ConfirmUserName>}
+      {state.step === 2 && <TodoProvider><TodoList /></TodoProvider>}
+    </>
   );
 }
-
-export default App;

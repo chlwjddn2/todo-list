@@ -1,0 +1,14 @@
+.header {
+  background-color: var(--color-header);
+  padding: 1rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.header h1 {
+  margin-top: 1rem;
+}
+
+.date {
+  font-size: 1rem;
+}
